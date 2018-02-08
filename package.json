@@ -1,0 +1,18 @@
+{
+  "name": "ht-toolbar-apps-button",
+  "flat": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/maksimyurkov/ht-toolbar-apps-button",
+  "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.8",
+    "@polymer/paper-icon-button": "^3.0.0-pre.8",
+    "@polymer/paper-styles": "^3.0.0-pre.8",
+    "@polymer/polymer": "^3.0.0-pre.8"
+  },
+  "resolutions": {
+    "@polymer/paper-styles": "3.0.0-pre.8"
+  }
+}
