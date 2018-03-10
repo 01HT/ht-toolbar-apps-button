@@ -4,7 +4,7 @@ import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
-class HTToolabarAppsButton extends Element {
+class HTToolabarAppsButton extends LitElement {
   render() {
     return html`
       <style>
