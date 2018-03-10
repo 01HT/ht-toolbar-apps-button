@@ -1,12 +1,12 @@
 "use strict";
-import { Element } from "../@polymer/polymer/polymer-element.js";
-import "../@polymer/iron-iconset-svg/iron-iconset-svg.js";
-import "../@polymer/paper-icon-button/paper-icon-button.js";
-import "../@polymer/paper-styles/default-theme.js";
+import { LitElement, html } from "@polymer/lit-element";
+import "@polymer/iron-iconset-svg";
+import "@polymer/paper-icon-button";
+import "@polymer/paper-styles/default-theme.js";
 
 class HTToolabarAppsButton extends Element {
-  static get template() {
-    return `
+  render() {
+    return html`
       <style>
         :host {
             display: block;
@@ -27,9 +27,10 @@ class HTToolabarAppsButton extends Element {
         </defs>
     </svg>
 </iron-iconset-svg>
-<paper-icon-button icon="ht-toolbar-apps-button-icons:apps" on-click="toggle"></paper-icon-button>
+<paper-icon-button icon="ht-toolbar-apps-button-icons:apps" on-click=${e => {this.toggle(e)}}></paper-icon-button>
 `;
   }
+
   static get is() {
     return "ht-toolbar-apps-button";
   }
