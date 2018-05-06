@@ -5,7 +5,7 @@ import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolabarAppsButton extends LitElement {
-  render() {
+  _render() {
     return html`
       <style>
         :host {
