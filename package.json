@@ -8,10 +8,7 @@
   "dependencies": {
     "@polymer/iron-iconset-svg": "@next",
     "@polymer/paper-icon-button": "@next",
-    "@polymer/paper-styles": "@next",
+    "@polymer/iron-dropdown": "@next",
     "@polymer/lit-element": "@next"
-  },
-  "resolutions": {
-    "@polymer/paper-styles": "@next"
   }
 }
