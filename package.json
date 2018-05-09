@@ -6,9 +6,9 @@
   "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@polymer/iron-iconset-svg": "@next",
-    "@polymer/paper-icon-button": "@next",
-    "@polymer/iron-dropdown": "@next",
-    "@polymer/lit-element": "@next"
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.18",
+    "@polymer/paper-icon-button": "^3.0.0-pre.18",
+    "@polymer/iron-dropdown": "^3.0.0-pre.18",
+    "@polymer/lit-element": "^0.5.1"
   }
 }
