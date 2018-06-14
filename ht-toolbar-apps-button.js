@@ -138,14 +138,16 @@ class HTToolabarAppsButton extends LitElement {
                ${repeat(
                  items,
                  item => html`
-                <a href="${item.href}" target="_blank">
+                <a href="${item.href}">
                   <div class="border"></div>
                   <div id="title">
-                    <img src="/images/01ht-logo.svg">
-                    <div id="company-text">01HT</div>
+                    <img src="/node_modules/ht-toolbar-apps-button/logo.svg">
                     <div id="app-text" style="color:${item.color};">${
                    item.appText
                  }</div>
+                  <div id="company-text">${
+                    item.appText !== "" ? "." : ""
+                  }01.ht</div>
                   </div>
                   <div id="sub-text">
                     ${item.subText}
@@ -156,7 +158,7 @@ class HTToolabarAppsButton extends LitElement {
               </nav>
               <div id="divider"></div>
               <div id="support">
-                Присоединяйтесь к чату нашего сообщества в <a href="https://slack.com" target="_blank">Slack</a> 
+                Присоединяйтесь к чату нашего сообщества в <a href="https://01ht.slack.com" target="_blank">Slack</a> 
               </div>
             <div>
           </div>
@@ -180,25 +182,19 @@ class HTToolabarAppsButton extends LitElement {
     super();
     this.items = [
       {
-        href: "/",
+        href: "https://elements.01.ht",
         appText: "Elements",
         color: "#8bc34a",
         subText: "Элементы обучения"
       },
       {
-        href: "/",
+        href: "https://console.01.ht",
         appText: "Console",
         color: "#8bc34a",
         subText: "Консоль управления LMS"
       },
       {
-        href: "/",
-        appText: "Account",
-        color: "#8bc34a",
-        subText: "Управление аккаунтом"
-      },
-      {
-        href: "/",
+        href: "https://01.ht",
         appText: "",
         color: "#8bc34a",
         subText: "О компании"
