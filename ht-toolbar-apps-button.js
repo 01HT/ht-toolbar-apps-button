@@ -158,7 +158,7 @@ class HTToolabarAppsButton extends LitElement {
               </nav>
               <div id="divider"></div>
               <div id="support">
-                Присоединяйтесь к чату нашего сообщества в <a href="https://01ht.slack.com" target="_blank">Slack</a> 
+                Присоединяйтесь к чату нашего сообщества в <a href="https://01ht.slack.com" target="_blank" rel="noopener">Slack</a> 
               </div>
             <div>
           </div>
