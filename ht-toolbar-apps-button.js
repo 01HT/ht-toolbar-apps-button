@@ -141,7 +141,7 @@ class HTToolabarAppsButton extends LitElement {
                 <a href="${item.href}">
                   <div class="border"></div>
                   <div id="title">
-                    <img src="/node_modules/ht-toolbar-apps-button/logo.svg">
+                    <img src="https://storage.googleapis.com/api-01-ht.appspot.com/apps/01ht/logo.svg">
                     <div id="app-text" style="color:${item.color};">${
                    item.appText
                  }</div>
