@@ -141,7 +141,7 @@ class HTToolabarAppsButton extends LitElement {
                 <a href="${item.href}">
                   <div class="border"></div>
                   <div id="title">
-                    <img src="https://storage.googleapis.com/api-01-ht.appspot.com/apps/01.ht/logo.svg">
+                    <img src$=${item.logoURL}>
                     <div id="app-text" style="color:${item.color};">${
                    item.appText
                  }</div>
@@ -185,19 +185,25 @@ class HTToolabarAppsButton extends LitElement {
         href: "https://elements.01.ht",
         appText: "Elements",
         color: "#8bc34a",
-        subText: "Элементы обучения"
+        subText: "Элементы обучения",
+        logoURL:
+          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/elements/logo.svg"
       },
       {
         href: "https://console.01.ht",
         appText: "Console",
         color: "#8bc34a",
-        subText: "Консоль управления LMS"
+        subText: "Консоль управления LMS",
+        logoURL:
+          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/console/logo.svg"
       },
       {
         href: "https://01.ht",
         appText: "",
         color: "#8bc34a",
-        subText: "О компании"
+        subText: "О компании",
+        logoURL:
+          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/logo.svg"
       }
     ];
   }
