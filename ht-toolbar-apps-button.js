@@ -1,12 +1,13 @@
 "use strict";
 import { LitElement, html } from "@polymer/lit-element";
-import { repeat } from "lit-html/lib/repeat.js";
+import { repeat } from "lit-html/directives/repeat.js";
 import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/iron-dropdown";
 
 class HTToolabarAppsButton extends LitElement {
-  _render({ items }) {
+  render() {
+    const { items } = this;
     return html`
       <style>
         :host {
@@ -126,7 +127,7 @@ class HTToolabarAppsButton extends LitElement {
           </svg>
       </iron-iconset-svg>
       <div id="container">
-        <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" on-click=${e => {
+        <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" @click=${e => {
           e.preventDefault();
           this.open();
         }}></paper-icon-button>
@@ -141,7 +142,7 @@ class HTToolabarAppsButton extends LitElement {
                 <a href="${item.href}">
                   <div class="border"></div>
                   <div id="title">
-                    <img src$=${item.logoURL}>
+                    <img src=${item.logoURL}>
                     <div id="app-text" style="color:${item.color};">${
                    item.appText
                  }</div>
@@ -174,7 +175,7 @@ class HTToolabarAppsButton extends LitElement {
 
   static get properties() {
     return {
-      items: Array
+      items: { type: Array }
     };
   }
 
