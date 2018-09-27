@@ -40,7 +40,7 @@ class HTToolabarAppsButton extends LitElement {
           display: flex;
           flex-direction:column;
           margin: 6px 0;
-          padding: 0 32px;
+          padding: 0 8px 0 32px;
           position:relative;
         }
 
@@ -62,7 +62,7 @@ class HTToolabarAppsButton extends LitElement {
           display: block;
           width: 18px;
           height: 18px;
-          margin-right: 4px;
+          margin-right: 8px;
         }
 
         nav {
@@ -92,12 +92,12 @@ class HTToolabarAppsButton extends LitElement {
           font-size: 13px;
           font-weight:400;
           color: var(--secondary-text-color);
-          transition: 0.15s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
-          opacity: 0.6;
+          //transition: 0.15s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
+          //opacity: 0.6;
         }
 
         a:hover #sub-text {
-          opacity:1;
+          //opacity:1;
         }
 
         #divider {
@@ -159,7 +159,7 @@ class HTToolabarAppsButton extends LitElement {
               </nav>
               <div id="divider"></div>
               <div id="support">
-                Присоединяйтесь к чату нашего сообщества в <a href="https://01ht.slack.com" target="_blank" rel="noopener">Slack</a> 
+                Присоединяйтесь к чату нашего сообщества в <a href="https://spectrum.chat/01ht" target="_blank" rel="noopener">Spectrum</a> 
               </div>
             <div>
           </div>
@@ -185,24 +185,24 @@ class HTToolabarAppsButton extends LitElement {
       {
         href: "https://elements.01.ht",
         appText: "Elements",
-        color: "#8bc34a",
-        subText: "Элементы обучения",
+        // color: "#83b735",
+        subText: "Каталог элементов обучения",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/elements/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1537280524/logos/01ht/elements/logo.svg"
       },
       {
         href: "https://console.01.ht",
         appText: "Console",
-        color: "#8bc34a",
-        subText: "Консоль управления LMS",
+        // color: "#039be5",
+        subText: "Консоль управления модулями",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/console/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1538055166/logos/01ht/console/logo.svg"
       },
       {
         href: "https://01.ht",
         appText: "",
-        color: "#8bc34a",
-        subText: "О компании",
+        // color: "#8bc34a",
+        subText: "Сайт компании 01HT",
         logoURL:
           "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/logo.svg"
       }
