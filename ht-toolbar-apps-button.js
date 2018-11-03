@@ -11,9 +11,9 @@ class HTToolabarAppsButton extends LitElement {
     return html`
       <style>
         :host {
-            display: block;
-            position: relative;
-            box-sizing: border-box;
+          display: block;
+          position: relative;
+          box-sizing: border-box;
         }
 
         paper-icon-button {
@@ -30,10 +30,9 @@ class HTToolabarAppsButton extends LitElement {
         }
 
         a {
-            text-decoration: none;
-            color: inherit;
-            outline: none;
-
+          text-decoration: none;
+          color: inherit;
+          outline: none;
         }
 
         nav a {
@@ -73,31 +72,21 @@ class HTToolabarAppsButton extends LitElement {
           overflow: hidden;
         }
 
-        #title {
+        .title {
           display:flex;
           align-items:center;
           font-size: 14px;
           margin: 2px 0;
         }
 
-        #company-text {
+        .company-text {
           font-weight: 400;
         }
 
-        #app-text {
-
-        }
-
-        #sub-text {
+        .sub-text {
           font-size: 13px;
           font-weight:400;
           color: var(--secondary-text-color);
-          //transition: 0.15s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
-          //opacity: 0.6;
-        }
-
-        a:hover #sub-text {
-          //opacity:1;
         }
 
         #divider {
@@ -141,16 +130,18 @@ class HTToolabarAppsButton extends LitElement {
                  item => html`
                 <a href="${item.href}">
                   <div class="border"></div>
-                  <div id="title">
-                    <img src=${item.logoURL}>
-                    <div id="app-text" style="color:${item.color};">${
+                  <div class="title">
+                    <img src=${item.logoURL} alt="${
+                   item.appText === "" ? "01HT" : item.appText
+                 } logo">
+                    <div class="app-text" style="color:${item.color};">${
                    item.appText
                  }</div>
-                  <div id="company-text">${
+                  <div class="company-text">${
                     item.appText !== "" ? "." : ""
                   }01.ht</div>
                   </div>
-                  <div id="sub-text">
+                  <div class="sub-text">
                     ${item.subText}
                   </div>
                 </a>
