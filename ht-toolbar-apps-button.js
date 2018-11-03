@@ -119,7 +119,7 @@ class HTToolabarAppsButton extends LitElement {
         <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" @click=${e => {
           e.preventDefault();
           this.open();
-        }}></paper-icon-button>
+        }} alt="Меню c приложениями 01HT"></paper-icon-button>
         
         <iron-dropdown horizontal-align="right" vertical-align="top" vertical-offset="40" on-click="close">
           <div slot="dropdown-content">
