@@ -128,7 +128,7 @@ class HTToolabarAppsButton extends LitElement {
                ${repeat(
                  items,
                  item => html`
-                <a href="${item.href}">
+                <a href="${item.href}" rel="noopener">
                   <div class="border"></div>
                   <div class="title">
                     <img src=${item.logoURL} alt="${
