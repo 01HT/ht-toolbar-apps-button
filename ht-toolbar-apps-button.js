@@ -1,111 +1,112 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import { repeat } from "lit-html/directives/repeat.js";
 import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/iron-dropdown";
 
 class HTToolabarAppsButton extends LitElement {
+  static styles = css`<style>
+    :host {
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    paper-icon-button {
+      color: var(--secondary-text-color);
+    }
+
+    iron-dropdown {
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12),
+      0 2px 4px -1px rgba(0, 0, 0, 0.4);
+      width: 270px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
+
+    nav a {
+      display: flex;
+      flex-direction:column;
+      margin: 6px 0;
+      padding: 0 8px 0 32px;
+      position:relative;
+    }
+
+    .border {
+      border-left: 3px solid var(--accent-color);
+      height: 100%;
+      position:absolute;
+      left:-3px;
+      transform: translateX(0);
+      transition: 0.5s;
+    }
+
+    a:hover .border {
+      transform: translateX(3px);
+      transition: 0.5s;
+    }
+
+    img {
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+
+    nav {
+      padding: 10px 0;
+      width:250px;
+      display:flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .title {
+      display:flex;
+      align-items:center;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .company-text {
+      font-weight: 400;
+    }
+
+    .sub-text {
+      font-size: 13px;
+      font-weight:400;
+      color: var(--secondary-text-color);
+    }
+
+    #divider {
+      height:1px;
+      width:100%;
+      background: var(--divider-color);
+    }
+
+    #support {
+      padding: 16px 32px;
+      color: var(--secondary-text-color);
+      font-size: 13px;
+    }
+
+    #support a {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  </style>`;
+
   render() {
     const { items } = this;
     return html`
-      <style>
-        :host {
-          display: block;
-          position: relative;
-          box-sizing: border-box;
-        }
-
-        paper-icon-button {
-          color: var(--secondary-text-color);
-        }
-
-        iron-dropdown {
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-          0 1px 10px 0 rgba(0, 0, 0, 0.12),
-          0 2px 4px -1px rgba(0, 0, 0, 0.4);
-          width: 270px;
-          overflow: hidden;
-          background: #fff;
-        }
-
-        a {
-          text-decoration: none;
-          color: inherit;
-          outline: none;
-        }
-
-        nav a {
-          display: flex;
-          flex-direction:column;
-          margin: 6px 0;
-          padding: 0 8px 0 32px;
-          position:relative;
-        }
-
-        .border {
-          border-left: 3px solid var(--accent-color);
-          height: 100%;
-          position:absolute;
-          left:-3px;
-          transform: translateX(0);
-          transition: 0.5s;
-        }
-
-        a:hover .border {
-          transform: translateX(3px);
-          transition: 0.5s;
-        }
-
-        img {
-          display: block;
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
-
-        nav {
-          padding: 10px 0;
-          width:250px;
-          display:flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        .title {
-          display:flex;
-          align-items:center;
-          font-size: 14px;
-          margin: 2px 0;
-        }
-
-        .company-text {
-          font-weight: 400;
-        }
-
-        .sub-text {
-          font-size: 13px;
-          font-weight:400;
-          color: var(--secondary-text-color);
-        }
-
-        #divider {
-          height:1px;
-          width:100%;
-          background: var(--divider-color);
-        }
-
-        #support {
-          padding: 16px 32px;
-          color: var(--secondary-text-color);
-          font-size: 13px;
-        }
-
-        #support a {
-          text-decoration: underline;
-          font-weight: 600;
-        }
-      </style>
       <iron-iconset-svg size="24" name="ht-toolbar-apps-button-icons">
           <svg>
               <defs>
@@ -116,10 +117,10 @@ class HTToolabarAppsButton extends LitElement {
           </svg>
       </iron-iconset-svg>
       <div id="container">
-        <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" @click=${e => {
+        <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" @click="${e => {
           e.preventDefault();
           this.open();
-        }} alt="Меню c приложениями 01HT"></paper-icon-button>
+        }}" alt="Меню c приложениями 01HT"></paper-icon-button>
         
         <iron-dropdown horizontal-align="right" vertical-align="top" vertical-offset="40" on-click="close">
           <div slot="dropdown-content">
@@ -131,7 +132,7 @@ class HTToolabarAppsButton extends LitElement {
                 <a href="${item.href}" rel="noopener">
                   <div class="border"></div>
                   <div class="title">
-                    <img src=${item.logoURL} alt="${
+                    <img src="${item.logoURL}" alt="${
                    item.appText === "" ? "01HT" : item.appText
                  } logo">
                     <div class="app-text" style="color:${item.color};">${
@@ -158,10 +159,6 @@ class HTToolabarAppsButton extends LitElement {
       </div>
 
 `;
-  }
-
-  static get is() {
-    return "ht-toolbar-apps-button";
   }
 
   static get properties() {
@@ -217,4 +214,4 @@ class HTToolabarAppsButton extends LitElement {
   }
 }
 
-customElements.define(HTToolabarAppsButton.is, HTToolabarAppsButton);
+customElements.define("ht-toolbar-apps-button", HTToolabarAppsButton);
