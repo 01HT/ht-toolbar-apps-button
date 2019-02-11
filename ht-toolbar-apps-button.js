@@ -5,104 +5,104 @@ import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/iron-dropdown";
 
+import { stylesBasicWebcomponents } from "@01ht/ht-theme/styles";
+
 class HTToolabarAppsButton extends LitElement {
-  static styles = css`<style>
-    :host {
-      display: block;
-      position: relative;
-      box-sizing: border-box;
-    }
+  static get styles() {
+    return [
+      stylesBasicWebcomponents,
+      css`
+        paper-icon-button {
+          color: var(--secondary-text-color);
+        }
 
-    paper-icon-button {
-      color: var(--secondary-text-color);
-    }
+        iron-dropdown {
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+          width: 270px;
+          overflow: hidden;
+          background: #fff;
+        }
 
-    iron-dropdown {
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12),
-      0 2px 4px -1px rgba(0, 0, 0, 0.4);
-      width: 270px;
-      overflow: hidden;
-      background: #fff;
-    }
+        a {
+          text-decoration: none;
+          color: inherit;
+          outline: none;
+        }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      outline: none;
-    }
+        nav a {
+          display: flex;
+          flex-direction: column;
+          margin: 6px 0;
+          padding: 0 8px 0 32px;
+          position: relative;
+        }
 
-    nav a {
-      display: flex;
-      flex-direction:column;
-      margin: 6px 0;
-      padding: 0 8px 0 32px;
-      position:relative;
-    }
+        .border {
+          border-left: 3px solid var(--accent-color);
+          height: 100%;
+          position: absolute;
+          left: -3px;
+          transform: translateX(0);
+          transition: 0.5s;
+        }
 
-    .border {
-      border-left: 3px solid var(--accent-color);
-      height: 100%;
-      position:absolute;
-      left:-3px;
-      transform: translateX(0);
-      transition: 0.5s;
-    }
+        a:hover .border {
+          transform: translateX(3px);
+          transition: 0.5s;
+        }
 
-    a:hover .border {
-      transform: translateX(3px);
-      transition: 0.5s;
-    }
+        img {
+          display: block;
+          width: 18px;
+          height: 18px;
+          margin-right: 8px;
+        }
 
-    img {
-      display: block;
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
-    }
+        nav {
+          padding: 10px 0;
+          width: 250px;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
 
-    nav {
-      padding: 10px 0;
-      width:250px;
-      display:flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+        .title {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          margin: 2px 0;
+        }
 
-    .title {
-      display:flex;
-      align-items:center;
-      font-size: 14px;
-      margin: 2px 0;
-    }
+        .company-text {
+          font-weight: 400;
+        }
 
-    .company-text {
-      font-weight: 400;
-    }
+        .sub-text {
+          font-size: 13px;
+          font-weight: 400;
+          color: var(--secondary-text-color);
+        }
 
-    .sub-text {
-      font-size: 13px;
-      font-weight:400;
-      color: var(--secondary-text-color);
-    }
+        #divider {
+          height: 1px;
+          width: 100%;
+          background: var(--divider-color);
+        }
 
-    #divider {
-      height:1px;
-      width:100%;
-      background: var(--divider-color);
-    }
+        #support {
+          padding: 16px 32px;
+          color: var(--secondary-text-color);
+          font-size: 13px;
+        }
 
-    #support {
-      padding: 16px 32px;
-      color: var(--secondary-text-color);
-      font-size: 13px;
-    }
-
-    #support a {
-      text-decoration: underline;
-      font-weight: 600;
-    }
-  </style>`;
+        #support a {
+          text-decoration: underline;
+          font-weight: 600;
+        }
+      `
+    ];
+  }
 
   render() {
     const { items } = this;
