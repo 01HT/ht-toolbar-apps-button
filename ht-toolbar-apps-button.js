@@ -176,7 +176,7 @@ class HTToolabarAppsButton extends LitElement {
         // color: "#83b735",
         subText: "Каталог элементов обучения",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1537280524/logos/01ht/elements/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1550397149/logos/01ht/elements/logo.svg"
       },
       {
         href: "https://console.01.ht",
@@ -184,7 +184,7 @@ class HTToolabarAppsButton extends LitElement {
         // color: "#039be5",
         subText: "Консоль управления модулями",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1538055166/logos/01ht/console/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1549575579/logos/01ht/console/logo.svg"
       },
       {
         href: "https://01.ht",
@@ -192,7 +192,7 @@ class HTToolabarAppsButton extends LitElement {
         // color: "#8bc34a",
         subText: "Сайт компании 01HT",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/logos/01ht/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1549575496/logos/01ht/logo.svg"
       }
     ];
   }
