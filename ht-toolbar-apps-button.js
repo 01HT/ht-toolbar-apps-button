@@ -60,8 +60,8 @@ class HTToolabarAppsButton extends LitElement {
         }
 
         nav {
+          min-width: 100%;
           padding: 10px 0;
-          width: 250px;
           display: flex;
           flex-direction: column;
           overflow: hidden;
@@ -72,10 +72,6 @@ class HTToolabarAppsButton extends LitElement {
           align-items: center;
           font-size: 14px;
           margin: 2px 0;
-        }
-
-        .company-text {
-          font-weight: 400;
         }
 
         .sub-text {
@@ -108,53 +104,49 @@ class HTToolabarAppsButton extends LitElement {
     const { items } = this;
     return html`
       <iron-iconset-svg size="24" name="ht-toolbar-apps-button-icons">
-          <svg>
-              <defs>
-                  <g id="apps">
-                      <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path>
-                  </g>
-              </defs>
-          </svg>
+        <svg>
+          <defs>
+            <g id="apps">
+              <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path>
+            </g>
+          </defs>
+        </svg>
       </iron-iconset-svg>
       <div id="container">
         <paper-icon-button icon="ht-toolbar-apps-button-icons:apps" @click="${e => {
           e.preventDefault();
           this.open();
-        }}" alt="Меню c приложениями 01HT"></paper-icon-button>
-        
+        }}"
+          alt="Меню c приложениями 01HT"></paper-icon-button>
+      
         <iron-dropdown horizontal-align="right" vertical-align="top" vertical-offset="40" on-click="close">
           <div slot="dropdown-content">
             <div>
               <nav>
-               ${repeat(
-                 items,
-                 item => html`
+                ${repeat(
+                  items,
+                  item => html`
                 <a href="${item.href}" rel="noopener">
                   <div class="border"></div>
                   <div class="title">
-                    <img src="${item.logoURL}" alt="${
-                   item.appText === "" ? "01HT" : item.appText
-                 } logo">
+                    <img src="${item.logoURL}" alt="${item.altText}">
                     <div class="app-text" style="color:${item.color};">${
-                   item.appText
-                 }</div>
-                  <div class="company-text">${
-                    item.appText !== "" ? "." : ""
-                  }01.ht</div>
+                    item.appText
+                  }</div>
                   </div>
                   <div class="sub-text">
                     ${item.subText}
                   </div>
                 </a>
-              `
-               )}
+                `
+                )}
               </nav>
-              <div id="divider"></div>
+              <!-- <div id="divider"></div>
               <div id="support">
-                Присоединяйтесь к чату нашего сообщества в <a href="https://spectrum.chat/01ht" target="_blank" rel="noopener">Spectrum</a> 
+                Присоединяйтесь к чату нашего сообщества в <a href="https://spectrum.chat/01ht" target="_blank" rel="noopener">Spectrum</a>
+              </div> -->
+              <div>
               </div>
-            <div>
-          </div>
         </iron-dropdown>
       </div>
 
@@ -172,27 +164,30 @@ class HTToolabarAppsButton extends LitElement {
     this.items = [
       {
         href: "https://elements.01.ht",
-        appText: "Elements",
+        appText: "elements.01.ht",
+        altText: "Elements logo",
         // color: "#83b735",
-        subText: "Каталог элементов обучения",
+        subText: "Маркетплейс обучения",
         logoURL:
           "https://res.cloudinary.com/cdn-01ht/image/upload/v1550397149/logos/01ht/elements/logo.svg"
       },
       {
-        href: "https://console.01.ht",
-        appText: "Console",
-        // color: "#039be5",
-        subText: "Консоль управления модулями",
-        logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1549575579/logos/01ht/console/logo.svg"
-      },
-      {
-        href: "https://01.ht",
-        appText: "",
+        href: "https://blog.01.ht",
+        appText: "blog.01.ht",
+        altText: "01HT logo",
         // color: "#8bc34a",
-        subText: "Сайт компании 01HT",
+        subText: "Блог компании 01HT",
         logoURL:
           "https://res.cloudinary.com/cdn-01ht/image/upload/v1549575496/logos/01ht/logo.svg"
+      },
+      {
+        href: "https://spectrum.chat/01ht",
+        appText: "spectrum.chat/01ht",
+        altText: "Spectrum logo",
+        // color: "#8bc34a",
+        subText: "Форум и поддержка",
+        logoURL:
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1558949971/logos/spectrum/logo.svg"
       }
     ];
   }
