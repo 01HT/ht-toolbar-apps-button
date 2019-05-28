@@ -3,12 +3,25 @@
   "version": "1.0.1",
   "main": "ht-toolbar-apps-button.js",
   "repository": "01ht/ht-toolbar-apps-button",
+  "scripts": {
+    "build": "webpack && npx babel ./dist/ht-toolbar-apps-button-es6.js -o ./dist/ht-toolbar-apps-button-es5.js"
+  },
   "author": "01HT Ltd",
   "license": "UNLICENSED",
   "dependencies": {
-    "lit-element": "^2.0.1",
+    "@babel/polyfill": "^7.4.4",
+    "@polymer/iron-dropdown": "^3.0.1",
     "@polymer/iron-iconset-svg": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.1",
-    "@polymer/iron-dropdown": "^3.0.1"
+    "core-js": "^3.1.3",
+    "lit-element": "^2.0.1"
+  },
+  "devDependencies": {
+    "@01ht/ht-theme": "github:01ht/ht-theme",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   }
 }
