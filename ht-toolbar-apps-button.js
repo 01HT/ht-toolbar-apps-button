@@ -126,7 +126,9 @@ class HTToolabarAppsButton extends LitElement {
                 ${repeat(
                   items,
                   item => html`
-                <a href="${item.href}" rel="noopener">
+                <a href="${item.href}" rel="noopener ${
+                    item.nofollow ? "nofollow" : ""
+                  }">
                   <div class="border"></div>
                   <div class="title">
                     <img src="${item.logoURL}" alt="${item.altText}">
@@ -142,9 +144,9 @@ class HTToolabarAppsButton extends LitElement {
                 )}
               </nav>
               <!-- <div id="divider"></div>
-              <div id="support">
-                Присоединяйтесь к чату нашего сообщества в <a href="https://spectrum.chat/01ht" target="_blank" rel="noopener">Spectrum</a>
-              </div> -->
+                    <div id="support">
+                      Присоединяйтесь к чату нашего сообщества в <a href="https://spectrum.chat/01ht" target="_blank" rel="noopener">Spectrum</a>
+                    </div> -->
               <div>
               </div>
         </iron-dropdown>
@@ -187,7 +189,8 @@ class HTToolabarAppsButton extends LitElement {
         // color: "#8bc34a",
         subText: "Форум и поддержка",
         logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1558949971/logos/spectrum/logo.svg"
+          "https://res.cloudinary.com/cdn-01ht/image/upload/v1558949971/logos/spectrum/logo.svg",
+        nofollow: true
       }
     ];
   }
