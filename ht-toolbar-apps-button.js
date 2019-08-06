@@ -170,8 +170,9 @@ class HTToolabarAppsButton extends LitElement {
         altText: "Elements logo",
         // color: "#83b735",
         subText: "Маркетплейс обучения",
-        logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1550397149/logos/01ht/elements/logo.svg"
+        logoURL: `${
+          window.appConfig.cloudinary.url
+        }/image/upload/v1550397149/logos/01ht/elements/logo.svg`
       },
       {
         href: "https://blog.01.ht",
@@ -179,8 +180,9 @@ class HTToolabarAppsButton extends LitElement {
         altText: "01HT logo",
         // color: "#8bc34a",
         subText: "Блог компании 01HT",
-        logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1549575496/logos/01ht/logo.svg"
+        logoURL: `${
+          window.appConfig.cloudinary.url
+        }/image/upload/v1549575496/logos/01ht/logo.svg`
       },
       {
         href: "https://spectrum.chat/01ht",
@@ -188,8 +190,9 @@ class HTToolabarAppsButton extends LitElement {
         altText: "Spectrum logo",
         // color: "#8bc34a",
         subText: "Форум и поддержка",
-        logoURL:
-          "https://res.cloudinary.com/cdn-01ht/image/upload/v1558949971/logos/spectrum/logo.svg",
+        logoURL: `${
+          window.appConfig.cloudinary.url
+        }/image/upload/v1558949971/logos/spectrum/logo.svg`,
         nofollow: true
       }
     ];
